@@ -4,7 +4,7 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 
-var lettersGuessed = [];
+var userGuessed = [];
 
 document.onkeyup = function(event) {
 var userGuess = event.key;
@@ -15,13 +15,13 @@ var key = event.key.toLowerCase();
 		wins++;
 		guessesLeft = 9;
 		string = [];
-		lettersGuessed.length = 0;
+		userGuessed.length = 0;
 	}
 
 	else {
 		guessesLeft--;
-		lettersGuessed.push(key);
-		var string = lettersGuessed.join(',');
+		userGuessed.push(key);
+		var string = userGuessed.join(',');
 	}	
 
 	if (guessesLeft === 0) {
@@ -29,7 +29,7 @@ var key = event.key.toLowerCase();
 		losses++;
 		guessesLeft = 9;
 		string = [];
-		lettersGuessed.length = 0;
+		userGuessed.length = 0;
 		
 		}
 
